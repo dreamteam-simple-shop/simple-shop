@@ -5,12 +5,14 @@ import { TbShoppingCartHeart } from "react-icons/tb";
 
 export default function Home() {
   return (
-    <div className="">
+    <>
+      <header></header>
       <main className="">
         <MdFavorite />
         <MdFavoriteBorder />
         <TbShoppingCartHeart />
       </main>
-    </div>
+      <footer></footer>
+    </>
   );
 }
