@@ -3,8 +3,6 @@ import { IoIosSearch } from 'react-icons/io';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { IoCartOutline } from 'react-icons/io5';
 
-
-
 function Logo() {
 	return (
 		<Link href="/">
@@ -50,6 +48,7 @@ function Search() {
 		</div>
 	);
 }
+
 export default function Header() {
 	return (
 		<header className="flex flex-row justify-around items-center p-4">
