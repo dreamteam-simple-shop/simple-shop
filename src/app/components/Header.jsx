@@ -1,0 +1,65 @@
+import Link from 'next/link';
+import { IoIosSearch } from 'react-icons/io';
+import { MdFavoriteBorder } from 'react-icons/md';
+import { IoCartOutline } from 'react-icons/io5';
+
+
+
+function Logo() {
+	return (
+		<Link href="/">
+			<h1 className="text-md uppercase tracking-tight">Modernshop</h1>
+		</Link>
+	);
+}
+
+function Navigation() {
+	return (
+		<nav>
+			<ul className="flex flex-row gap-6">
+				<li><Link href="/">New Arrivals</Link></li>
+                <li><Link href="/">Men</Link></li>
+                <li><Link href="/">Women</Link></li>
+                <li><Link href="/">Accessories</Link></li>
+                <li><Link href="/">Sale</Link></li>
+			</ul>
+		</nav>
+	);
+}
+
+function Favorite() {
+	return (
+		<div className="flex flex-row gap-2">
+			<MdFavoriteBorder className="text-gray-500" />
+		</div>
+	);
+}
+
+function Cart() {
+	return (
+		<div className="flex flex-row gap-2">
+			<IoCartOutline className="text-gray-500" />
+		</div>
+	);
+}
+function Search() {
+	return (
+		<div className="flex flex-row gap-2 bg-gray-100 rounded-full pt-1 ps-3 pb-1 items-center">
+			<IoIosSearch className="text-gray-500" />
+			<input type="text" placeholder="Search products..." className="bg-transparent outline-none text-sm" />
+		</div>
+	);
+}
+export default function Header() {
+	return (
+		<header className="flex flex-row justify-around items-center p-4">
+            <Logo />
+            <Navigation />
+            <Search />
+            <div className="flex flex-row gap-6">
+                <Favorite />
+                <Cart />
+            </div>
+		</header>
+	);
+}
