@@ -4,7 +4,7 @@ export default function Detalje() {
   return (
     <>
       <header></header>
-      <main className="">
+      <main className="py-20">
         <ProductSingel />
       </main>
       <footer></footer>
