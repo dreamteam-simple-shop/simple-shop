@@ -2,33 +2,33 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
-import { TbShoppingCartHeart } from "react-icons/tb";
+import { TbShoppingCartPlus } from "react-icons/tb";
 const ProductSingel = () => {
   const [isQuant, setIsQuant] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   return (
-    <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-2">
-      <div className="md:col-1">
-        <figure className="grid justify-center self-center">
+    <div className=" px-10  grid md:grid-cols-2 sm:grid-cols-1 gap-12">
+      <div className="md:col-1 ">
+        <figure className="grid justify-stretch self-center pt-5">
           <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={400} height={400} className="col-1 row-1 rounded-4xl self-stretch object-cover aspect-square"></Image>
           <div className="col-1 row-1 justify-self-start p-3">
             <p className="bg-black text-white py-1 px-2 rounded-xl m-1">New</p>
             <p className="bg-red-600 text-white py-1 px-2 rounded-xl m-1">Sale</p>
           </div>
         </figure>
-        <div className="flex gap-2 p-3 self-center justify-center">
+        {/* <div className="flex gap-2 py-3 justify-start">
           <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
           <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
           <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
           <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
-        </div>
+        </div> */}
       </div>
-      <div className="md:col-2 grid grid-rows-[auto_1fr] md:min-h-screen px-10">
+      <div className=" md:col-2 grid grid-rows-[auto_1fr] md:min-h-screen ">
         <div>
-          <div className="grid gap-2 pb-4">
-            <p className="text-gray-400 pt-5">Clothing</p>
+          <div className=" grid gap-2 pb-4">
+            <p className=" text-gray-400 pt-5 ">Clothing</p>
             <h1 className="text-xl">Classic Denim Jacket</h1>
             <div className="flex gap-2 items-center">
               <FaStar color="yellow" />
@@ -47,7 +47,7 @@ const ProductSingel = () => {
 
           <hr className="text-gray-400" />
           <h3 className="text-xl py-4">Description</h3>
-          <p className="text-gray-600">Experience premium quality and timeless design with this carefully crafted piece. Made from high-quality materials, this product combines comfort with style, perfect for any occasion. Features include durable construction, attention to detail, and a modern aesthetic that complements any wardrobe.</p>
+          <p className="text-gray-600 md:pe-5">Experience premium quality and timeless design with this carefully crafted piece. Made from high-quality materials, this product combines comfort with style, perfect for any occasion. Features include durable construction, attention to detail, and a modern aesthetic that complements any wardrobe.</p>
           <h3 className="text-xl py-4">Select size</h3>
           <div className="inline-grid grid-cols-3 gap-3">
             {sizes.map((size) => (
@@ -84,7 +84,7 @@ const ProductSingel = () => {
             </button>
           </div>
           <button className="bg-black text-white p-3 rounded-xl flex justify-start items-center gap-3 w-full mt-5">
-            <TbShoppingCartHeart color="white" size={30} />
+            <TbShoppingCartPlus color="white" size={30} />
             <p>Add to chart</p>
           </button>
         </div>

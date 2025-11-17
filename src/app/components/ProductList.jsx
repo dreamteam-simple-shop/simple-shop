@@ -1,5 +1,6 @@
 import ProductCard from "./ProductCard";
 
+
 const ProductList = () => {
   return (
     <div className="grid grid-cols-(--list-grid) justify-between gap-7 py-5 mt-20 px-10">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TbShoppingCartPlus } from "react-icons/tb";
 
 const ProductCard = () => {
   return (
@@ -12,12 +13,16 @@ const ProductCard = () => {
             <p className="bg-red-600 text-white py-1 px-2 rounded-xl m-1">Sale</p>
           </div>
         </figure>
-        <div className="p-10">
-          <p className="text-gray-600">Clothing</p>
-          <h1 className="text-lg">Classic Denim Jacket</h1>
-          <p>
-            $89.99 <span className="line-through text-gray-400">$1200</span>
-          </p>
+        <div className="p-5 flex items-end justify-between">
+          <div>
+            <p className="text-gray-600">Clothing</p>
+            <h1 className="text-lg">Classic Denim Jacket</h1>
+            <p>
+              $89.99 <span className="line-through text-gray-400">$1200</span>
+            </p>
+          
+          </div>
+            <TbShoppingCartPlus size={20} />
         </div>
       </div>
     </Link>
