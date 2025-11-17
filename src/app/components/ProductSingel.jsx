@@ -9,8 +9,8 @@ const ProductSingel = () => {
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   return (
-    <div className="grid grid-cols-3">
-      <div className="col-1">
+    <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-2">
+      <div className="md:col-1">
         <figure className="grid justify-center self-center">
           <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={400} height={400} className="col-1 row-1 rounded-4xl self-stretch object-cover aspect-square"></Image>
           <div className="col-1 row-1 justify-self-start p-3">
@@ -25,7 +25,7 @@ const ProductSingel = () => {
           <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
         </div>
       </div>
-      <div className="col-2 grid grid-rows-[auto_1fr] min-h-screen">
+      <div className="md:col-2 grid grid-rows-[auto_1fr] md:min-h-screen px-10">
         <div>
           <div className="grid gap-2 pb-4">
             <p className="text-gray-400 pt-5">Clothing</p>
