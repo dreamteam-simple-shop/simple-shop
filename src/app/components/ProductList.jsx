@@ -4,9 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { TbShoppingCartPlus } from 'react-icons/tb';
 
-async function FetchProducts() {
+async function FetchProducts({ category }) {
 	'use server';
-	const response = await fetch('https://dummyjson.com/products');
+	const url = category
+		? `https://dummyjson.com/products/category/${category}`
+		: 'https://dummyjson.com/products?limit=0';
+	const response = await fetch(url);
 	const { products } = await response.json();
 	return products.map((product) => (
 		<ProductCard
@@ -17,13 +20,22 @@ async function FetchProducts() {
 			price={product.price}
 			category={product.category}
 			discountPercentage={product.discountPercentage}
-      reviewAmount={product.reviews.length}
-      ratingTotal
+			reviewAmount={product.reviews.length}
+			ratingTotal
 		/>
 	));
 }
 
-function ProductCard({ key, id, thumbnail, title, price, category, discountPercentage, reviewAmount }) {
+function ProductCard({
+	key,
+	id,
+	thumbnail,
+	title,
+	price,
+	category,
+	discountPercentage,
+	reviewAmount,
+}) {
 	return (
 		<Link href={`/detalje/${id}`} key={key} className="rounded-4xl shadow-sm">
 			<div>
@@ -70,11 +82,11 @@ function ProductCard({ key, id, thumbnail, title, price, category, discountPerce
 	);
 }
 
-export default function ProductList() {
+export default function ProductList({ category }) {
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
 			<div className="grid grid-cols-(--list-grid) justify-between gap-3 py-5 mt-20 px-10">
-				<FetchProducts />
+				<FetchProducts category={category} />
 			</div>
 		</Suspense>
 	);
