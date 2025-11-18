@@ -5,6 +5,7 @@ import { MdFavoriteBorder } from 'react-icons/md';
 import { IoCartOutline } from 'react-icons/io5';
 import ShoppingCart from './ShoppingCart';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 function Logo() {
 	return (
@@ -62,14 +63,18 @@ function Cart() {
 }
 
 function Search() {
+	const router = useRouter();
 	return (
 		<div className="flex flex-row gap-2 bg-gray-100 rounded-full pt-1 ps-3 pb-1 items-center">
 			<IoIosSearch className="text-gray-500" />
-			<input
-				type="text"
-				placeholder="Search products..."
-				className="bg-transparent outline-none text-sm"
-			/>
+			<form>
+				<input
+					type="text"
+					placeholder="Search products..."
+					className="bg-transparent outline-none text-sm"
+					onChange={(e) => router.push(`/list?search=${e.target.value}`)}
+				/>
+			</form>
 		</div>
 	);
 }
