@@ -14,7 +14,7 @@ export default function Home({ searchParams }) {
 		<>
 			<main className="">
 				<Hero />
-				<Filter />
+				<Filter title="Featured Products" />
 				<Suspense fallback={<div>Loading...</div>}>
 					<ProductListContainer searchParams={searchParams} />
 				</Suspense>
