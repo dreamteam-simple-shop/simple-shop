@@ -8,6 +8,7 @@ async function FetchProduct({ params }) {
 	const product = await response.json();
 	return (
 		<ProductSingle
+			id={product.id}
 			title={product.title}
 			thumbnail={product.thumbnail}
 			category={product.category}
