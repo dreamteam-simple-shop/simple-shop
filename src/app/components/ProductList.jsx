@@ -5,9 +5,9 @@ import Image from "next/image";
 import CartElement from "./CartElement";
 import { TbShoppingCartPlus } from "react-icons/tb";
 
-async function FetchProducts({ category }) {
+async function FetchProducts({ category, search }) {
   "use server";
-  const url = category ? `https://dummyjson.com/products/category/${category}` : "https://dummyjson.com/products?limit=0";
+  const url = category ? `https://dummyjson.com/products/category/${category}` : search ? `https://dummyjson.com/products/search?q=${search}` : "https://dummyjson.com/products?limit=0";
   const response = await fetch(url);
   const { products } = await response.json();
   return products.map((product) => <ProductCard key={product.id} id={product.id} thumbnail={product.thumbnail} title={product.title} price={product.price} category={product.category} discountPercentage={product.discountPercentage} reviewAmount={product.reviews.length} ratingTotal />);
@@ -45,11 +45,11 @@ function ProductCard({ key, id, thumbnail, title, price, category, discountPerce
   );
 }
 
-export default function ProductList({ category }) {
+export default function ProductList({ category, search }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="grid grid-cols-(--list-grid) justify-between gap-3 py-5 mt-20 px-10">
-        <FetchProducts category={category} />
+        <FetchProducts category={category} search={search} />
       </div>
     </Suspense>
   );

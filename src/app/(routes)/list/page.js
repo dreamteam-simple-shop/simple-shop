@@ -4,11 +4,11 @@ import { Suspense } from 'react';
 
 async function ProductListContainer({ searchParams }) {
 	'use client';
-	const { category, title } = await searchParams;
+	const { category, title, search } = await searchParams;
 	return (
 		<>
 			<Filter title={title} />
-			<ProductList category={category} />
+			<ProductList category={category} search={search} />
 		</>
 	);
 }
