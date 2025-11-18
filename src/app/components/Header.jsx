@@ -19,19 +19,19 @@ function Navigation() {
 		<nav>
 			<ul className="flex flex-row gap-6">
 				<li>
-					<Link href="/">New Arrivals</Link>
+					<Link href="/list?category=mens-shoes&title=New%20Arrivals">New Arrivals</Link>
 				</li>
 				<li>
-					<Link href="/">Men</Link>
+					<Link href="/list?category=mobile-accessories&title=Men">Men</Link>
 				</li>
 				<li>
-					<Link href="/">Women</Link>
+					<Link href="/list?category=womens-dresses&title=Women">Women</Link>
 				</li>
 				<li>
-					<Link href="/">Accessories</Link>
+					<Link href="/list?category=womens-shoes&title=Accessories">Accessories</Link>
 				</li>
 				<li>
-					<Link href="/">Sale</Link>
+					<Link href="/list?category=womens-bags&title=Sale">Sale</Link>
 				</li>
 			</ul>
 		</nav>
