@@ -7,7 +7,7 @@ async function ProductListContainer({ searchParams }) {
 	const { category, title, search } = await searchParams;
 	return (
 		<>
-			<Filter title={title} />
+			<Filter search={search} title={title || `Results for "${search}":`} />
 			<ProductList category={category} search={search} />
 		</>
 	);
