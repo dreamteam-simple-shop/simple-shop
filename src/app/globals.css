@@ -6,7 +6,7 @@
 }
 
 @theme inline {
-  --list-grid: repeat(auto-fit, minmax(300px, 1fr));
+  --list-grid: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 body {
