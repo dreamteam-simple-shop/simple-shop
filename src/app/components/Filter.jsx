@@ -43,7 +43,7 @@ function FilterButton({ name, category }) {
 
 export default function Filter({ title }) {
 	return (
-		<div className="mt-15 md:mt-20 lg:mt-5 flex flex-col gap-8 items-center justify-center">
+		<div className="mt-15 md:mt-20 lg:mt-0 flex flex-col gap-8 items-center justify-center">
 			<h1 className="text-xl font-medium">{title}</h1>
 			<p className="text-gray-500 text-center max-w-2xl">
 				Discover our handpicked selection of premium products designed to elevate your
