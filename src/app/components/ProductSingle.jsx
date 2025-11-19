@@ -86,7 +86,7 @@ export default function ProductSingle({ title, thumbnail, category, description,
               <p> +</p>
             </button>
           </div>
-          <CartElement id={id} price={price} quantity={isQuant} />
+          <CartElement id={id} price={discountPercentage > 10 ? Math.round((price - (price * discountPercentage) / 100) * 100) / 100 : price} quantity={isQuant} />
         </div>
       </div>
     </div>
