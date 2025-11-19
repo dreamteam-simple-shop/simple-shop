@@ -14,8 +14,8 @@ export default function ProductSingle({ title, thumbnail, category, description,
   return (
     <div className=" px-10  grid md:grid-cols-2 sm:grid-cols-1 gap-12">
       <div className="md:col-1 ">
-        <figure className="grid justify-stretch self-center pt-5">
-          <Image src={thumbnail} loading="eager" alt="cat" width={400} height={400} className="col-1 row-1 rounded-4xl self-stretch object-cover aspect-square shadow-sm"></Image>
+        <figure className="grid self-center pt-5 shadow-sm rounded-4xl h-[100vh] my-5">
+          <Image src={thumbnail} loading="eager" alt="cat" width={500} height={500} className="col-1 row-1   object-cover aspect-square self-center m-auto"></Image>
           <div className="col-1 row-1 justify-self-start p-3">
             {/* <p className="bg-black text-white py-1 px-2 rounded-xl m-1">New</p> */}
             <p className={`bg-red-600 text-white py-1 px-2 rounded-xl m-1 ${discountPercentage > 10 ? "block" : "hidden"}`}>Sale</p>
@@ -86,7 +86,7 @@ export default function ProductSingle({ title, thumbnail, category, description,
               <p> +</p>
             </button>
           </div>
-          <CartElement id={id} price={price} quantity={isQuant}/>
+          <CartElement id={id} price={price} quantity={isQuant} />
         </div>
       </div>
     </div>
