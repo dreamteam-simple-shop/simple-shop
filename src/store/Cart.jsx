@@ -20,7 +20,7 @@ const useStore = create(
 				set({
 					cart: exists
 						? current.filter((elm) => elm.id !== id)
-						: [...current, { id, price, quantity }],
+						: [...current, { id, price, quantity}],
 				});
 				console.log(get().cart);
 			},
