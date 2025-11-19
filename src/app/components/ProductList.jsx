@@ -15,7 +15,7 @@ async function FetchProducts({ category, search }) {
 
 function ProductCard({ key, id, thumbnail, title, price, category, discountPercentage, reviewAmount }) {
   return (
-    <Link href={`/detalje/${id}`} key={key} className="rounded-4xl shadow-sm subgrid  gap-2 grid grid-rows-subgrid">
+    <Link href={`/detalje/${id}`} key={key} className="rounded-4xl shadow-sm gap-2 grid grid-rows-auto">
       <figure className="grid">
         <Image src={thumbnail} loading="eager" alt="product image" width={800} height={800} className="col-1 row-1 rounded-t-4xl self-stretch object-cover aspect-square"></Image>
         <div className="col-1 row-1 justify-self-start p-3">
@@ -24,7 +24,7 @@ function ProductCard({ key, id, thumbnail, title, price, category, discountPerce
         </div>
       </figure>
 
-      <div className="flex flex-col gap-2">
+      <div className="grid subgrid gap-2">
         <div className="p-4 flex items-center justify-between">
           <div>
             <p className="text-gray-400 text-sm capitalize">{category}</p>
@@ -43,7 +43,7 @@ function ProductCard({ key, id, thumbnail, title, price, category, discountPerce
 export default function ProductList({ category, search }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="grid grid-cols-(--list-grid) justify-between gap-3 py-5 mt-20 px-10 auto-rows-auto">
+      <div className="grid grid-cols-(--list-grid) justify-between gap-3 py-5 mt-20 px-10">
         <FetchProducts category={category} search={search} />
       </div>
     </Suspense>
