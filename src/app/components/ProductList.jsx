@@ -34,7 +34,9 @@ function ProductCard({ key, id, thumbnail, title, price, category, discountPerce
             </p>
           </div>
         </div>
-        <CartElement id={id} />
+        <div className="flex justify-center">
+          <CartElement id={id} />
+        </div>
       </div>
     </Link>
   );

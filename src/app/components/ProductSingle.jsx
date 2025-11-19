@@ -14,19 +14,14 @@ export default function ProductSingle({ title, thumbnail, category, description,
   return (
     <div className=" px-10  grid md:grid-cols-2 sm:grid-cols-1 gap-12">
       <div className="md:col-1 ">
-        <figure className="grid justify-stretch self-center pt-5">
-          <Image src={thumbnail} loading="eager" alt="cat" width={400} height={400} className="col-1 row-1 rounded-4xl self-stretch object-cover aspect-square shadow-sm"></Image>
+        <figure className="grid justify-stretch self-center pt-5 shadow-sm rounded-4xl h-full">
+          <Image src={thumbnail} loading="eager" alt="cat" width={500} height={500} className="col-1 row-1  object-cover aspect-square "></Image>
           <div className="col-1 row-1 justify-self-start p-3">
             {/* <p className="bg-black text-white py-1 px-2 rounded-xl m-1">New</p> */}
             <p className={`bg-red-600 text-white py-1 px-2 rounded-xl m-1 ${discountPercentage > 10 ? "block" : "hidden"}`}>Sale</p>
           </div>
         </figure>
-        {/* <div className="flex gap-2 py-3 justify-start">
-          <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
-          <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
-          <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
-          <Image src="https://placecats.com/neo/300/200" loading="eager" alt="cat" width={90} height={90} className="aspect-square rounded-xl self-stretch object-cover" />
-        </div> */}
+        
       </div>
       <div className=" md:col-2 grid grid-rows-[auto_1fr] md:min-h-screen gap-5">
         <div>

@@ -28,7 +28,7 @@ function FilterButton({ name, category }) {
 				}
 			}}
 			className={`
-                rounded-full px-6 py-2 transition-colors duration-300 cursor-pointer
+                rounded-xl px-6 py-2 transition-colors duration-300 cursor-pointer
                 ${
 					isActive
 						? 'bg-black text-white'
