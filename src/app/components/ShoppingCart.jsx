@@ -30,10 +30,19 @@ function CartItem({ id, title, thumbnail, price, discountPercentage, category, c
 	return (
 		<div className="flex flex-row gap-4 justify-between w-full h-40 border border-gray-200 p-4 rounded-4xl">
 			<figure className="grid grid-cols-2">
-				<button className="col-1 row-1 absolute cursor-pointer" onClick={() => toggleCart(id)}>
+				<button
+					className="col-1 row-1 absolute cursor-pointer"
+					onClick={() => toggleCart(id)}
+				>
 					<CiCircleRemove className="text-gray-500" />
 				</button>
-				<Image className="col-span-2 row-1" src={thumbnail} alt={title} width={100} height={100} />
+				<Image
+					className="col-span-2 row-1"
+					src={thumbnail}
+					alt={title}
+					width={100}
+					height={100}
+				/>
 			</figure>
 			<div className="flex flex-col gap-2 items-start justify-between">
 				<div>
@@ -44,8 +53,11 @@ function CartItem({ id, title, thumbnail, price, discountPercentage, category, c
 					<button
 						className="cursor-pointer border-r border-gray-400 px-2 h-full w-1/3 rounded-l-xl hover:bg-gray-200 transition-colors duration-300"
 						onClick={() => {
-							if (isQuant > 0) setIsQuant(isQuant - 1);
-							updateCart(id, price, isQuant);
+							if (isQuant > 0) {
+								const newQuant = isQuant - 1;
+								setIsQuant(newQuant);
+								updateCart(id, price, newQuant);
+							}
 						}}
 					>
 						<p>-</p>
@@ -61,8 +73,9 @@ function CartItem({ id, title, thumbnail, price, discountPercentage, category, c
 					<button
 						className="cursor-pointer border-l border-gray-400 h-full w-1/3 rounded-r-xl hover:bg-gray-200 transition-colors duration-300"
 						onClick={() => {
-							setIsQuant(isQuant + 1);
-							updateCart(id, price, isQuant);
+							const newQuant = isQuant + 1;
+							setIsQuant(newQuant);
+							updateCart(id, price, newQuant);
 						}}
 					>
 						<p> +</p>
@@ -73,7 +86,9 @@ function CartItem({ id, title, thumbnail, price, discountPercentage, category, c
 				<h1 className="text-sm font-medium price">
 					${(displayPrice * isQuant).toFixed(2)}
 				</h1>
-        <h2 className="text-gray-500 text-xs line-through">{discountPercentage > 10 ? '$ ' + (price * isQuant).toFixed(2) : ''}</h2>
+				<h2 className="text-gray-500 text-xs line-through">
+					{discountPercentage > 10 ? '$ ' + (price * isQuant).toFixed(2) : ''}
+				</h2>
 			</div>
 		</div>
 	);
@@ -153,9 +168,12 @@ function CartItems({ isOpen, setIsOpen, cartItems, cartTotal }) {
 				</button>
 			</div>
 			<GetCartItems setIsOpen={setIsOpen} cartTotal={cartTotal} />
-			<h1 className="text-sm font-medium w-full text-right border-t border-gray-200 mt-auto pt-4 self-end">
-				Total: ${cartTotal.toFixed(2)}
-			</h1>
+			<div className="text-sm font-medium w-full text-right border-t border-gray-200 mt-auto pt-4 self-end">
+				<div className="w-full flex flex-row justify-between">
+					<div className="">Total:</div>
+					<div className="">${cartTotal.toFixed(2)}</div>
+				</div>
+			</div>
 			<button className="bg-black text-white text-lg p-2 border border-black items-center justify-center gap-2 flex rounded-xl hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer">
 				<IoBagCheckOutline className="w-auto h-6 self-center" /> Checkout
 			</button>
