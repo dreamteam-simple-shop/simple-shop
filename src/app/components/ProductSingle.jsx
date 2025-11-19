@@ -77,7 +77,7 @@ export default function ProductSingle({ title, thumbnail, category, description,
             >
               <p>-</p>
             </button>
-            <input type="number" className="w-14 text-center p-1" value={isQuant} min={0} onChange={(e) => setIsQuant(Math.max(0, Number(e.target.value)))} />
+            <p className="w-14 text-center p-1">{isQuant}</p>
             <button
               onClick={() => {
                 setIsQuant(isQuant + 1);
@@ -86,7 +86,7 @@ export default function ProductSingle({ title, thumbnail, category, description,
               <p> +</p>
             </button>
           </div>
-          <CartElement id={id} />
+          <CartElement id={id} price={price} quantity={isQuant}/>
         </div>
       </div>
     </div>
